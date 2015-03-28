@@ -1,38 +1,21 @@
-<div class="row-fluid dash_nav">
-  <div class="span6">
-    <div class="dash_nav_l pull-left">
-      <div style="padding-left: 20px;">
-        <%= link_to "Overview" %>
-      </div>
+<nav class="navbar navbar-dash">
+    <div style="background-color:white;border:1px solid lightgrey;">
+        <div class="container">
+            <nav>
+                <ul class="nav">
+                  <li><%= link_to 'Overview', org_dashboard_url(:dashboard_view => "overview") %></li>
+                  <li><%= link_to 'Volunteers', org_dashboard_url(:dashboard_view => "volunteers") %></li>
+                  <li><%= link_to 'Events', org_dashboard_url(:dashboard_view => "events") %></li>
+                </ul>
+
+                <ul class="nav pull-right">
+                  <li><%= link_to 'Import', org_dashboard_url(:dashboard_view => "import") %></li>
+                  <li><%= link_to 'Export', org_dashboard_url(:dashboard_view => "export") %></li>
+                  <li><%= link_to 'Help', org_dashboard_url(:dashboard_view => "help") %></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="dash_nav_l pull-left">
-      <div style="padding-left: 20px;">
-        <%= link_to "Volunteers" %>
-      </div>
-    </div>
-    <div class="dash_nav_l pull-left">
-      <div style="padding-left: 20px;">
-        <%= link_to "Events" %>
-      </div>
-    </div>
-  </div>
-  <div class="span6">
-    <div class="dash_nav_r pull-right">
-      <div style="padding-right: 20px;">
-        <%= link_to "Help" %>
-      </div>
-    </div>
-    <div class="dash_nav_r pull-right">
-      <div style="padding-right: 20px;">
-        <%= link_to "Export" %>
-      </div>
-    </div>
-    <div class="dash_nav_r pull-right">
-      <div style="padding-right: 20px;">
-        <%= link_to "Import" %>
-      </div>
-    </div>
-  </div>
-</div>
+</nav>
 
 <%= render(:partial => "orgs/dashboard/" + @dashboard_view) %>
