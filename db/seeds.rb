@@ -55,11 +55,11 @@ Neighborhood.delete_all()
     city = neighborhood.properties['CITY']
     name = neighborhood.properties['NAME']
     neighborhood = Neighborhood.create(:state => state, :county => county, :city => city, :name => name, :region => neighborhood.geometry)
-    ActiveRecord::Base.connection.execute("UPDATE Neighborhoods SET center=Centroid(region) WHERE id=#{neighborhood.id}")
+    ActiveRecord::Base.connection.execute("UPDATE neighborhoods SET center=Centroid(region) WHERE id=#{neighborhood.id}")
   end
 end
 
-Notification.delete_all
+Notification.delete_all()
 Notification.create([
   {name: 'prop_received', description: 'Props from a grateful Flash Volunteer'},
   {name: 'new_event_attendee', description: "Someone signs up for an event I'm coordinating"},

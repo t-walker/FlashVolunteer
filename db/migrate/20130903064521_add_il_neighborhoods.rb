@@ -1,7 +1,4 @@
 class AddIlNeighborhoods < ActiveRecord::Migration
-  class Neighborhood < ActiveRecord::Base
-  end
-
   def change
     Neighborhood.delete_all()
 
@@ -13,7 +10,7 @@ class AddIlNeighborhoods < ActiveRecord::Migration
             city = neighborhood.properties["CITY"]
             name = neighborhood.properties["NAME"]
             neighborhood = Neighborhood.create(:state => state, :county => county, :city => city, :name => name, :region => neighborhood.geometry)
-            ActiveRecord::Base.connection.execute("UPDATE Neighborhoods SET center=Centroid(region) WHERE id=#{neighborhood.id}");
+            ActiveRecord::Base.connection.execute("UPDATE neighborhoods SET center=Centroid(region) WHERE id=#{neighborhood.id}");
         end
     end
   end

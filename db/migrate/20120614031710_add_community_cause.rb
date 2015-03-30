@@ -1,6 +1,5 @@
 class AddCommunityCause < ActiveRecord::Migration
   def change
-
     Skill.all.each do |s|
         if s.offset >=4
             s.offset += 1

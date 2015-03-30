@@ -59,4 +59,3 @@ Flashvolunteer::Application.configure do
     # new feature not released yet Bullet.add_footer = true
   end
 end
-

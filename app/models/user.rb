@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   include ActiveModel::Validations
-  delegate :can?, :cannot?, :to => :ability
 
+  delegate :can?, :cannot?, :to => :ability
+  
   validates_uniqueness_of :email, :allow_blank => true, :if => :email_changed?, :message => 'This e-mail address is already taken'
   validates_format_of     :email, :with  => /\A[^@]+@[^@]+\z/, :allow_blank => true, :if => :email_changed?, :message => 'You must specify a valid e-mail address'
   validates               :email, :presence => { message: 'You must specify an e-mail address' }
@@ -47,7 +48,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :confirmable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :terms_of_service, :name, :email, :password, :password_confirmation, :remember_me, :avatar, :birthday, :neighborhood_id, :skill_ids, :account_type, :hours_volunteered, :notification_preference_ids, :description, :signup_reason
+  attr_accessible :terms_of_service, :name, :email, :password, :password_confirmation, :remember_me, :avatar, :birthday, :neighborhood_id, :skill_ids, :account_type, :hours_volunteered, :notification_preference_ids, :description, :signup_reason, :confirmed_at
 
 
   scope :in_neighborhood, lambda { |neighborhood|

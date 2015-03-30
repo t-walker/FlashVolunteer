@@ -1,6 +1,8 @@
 class Affiliate < ActiveRecord::Base
   has_and_belongs_to_many :users, :join_table => 'user_affiliations'
   has_and_belongs_to_many :events, :join_table => 'event_affiliations'
+  
+  attr_accessible :name, :description
 
   has_attached_file :logo, :storage => :s3, :s3_credentials => {
     access_key_id: ENV['AWS_ACCESS_KEY'],

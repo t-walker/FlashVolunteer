@@ -1,4 +1,4 @@
-ruby '1.9.3'
+ruby '2.1.2'
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.18' 
@@ -38,11 +38,10 @@ gem 'hirefire-resource'
 gem 'uglifier'
 gem 'yui-compressor'
 
-group :assets do
-    gem 'sass', '~> 3.2'
-    gem 'sass-rails', '~> 3.2'
-    gem 'compass', '~> 0.12'
-end
+gem 'sass', '~> 3.2'
+gem 'sass-rails', '~> 3.2'
+gem 'compass', '~> 0.12'
+
 
 gem 'aws-sdk', '< 2.0'
 gem "paperclip", '~> 3.4'
@@ -77,6 +76,6 @@ group :production do
     # LKG is 6.7.9.9 - http://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/binaries/
     # http://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/binaries/ImageMagick-6.7.7-0-Q16-windows-dll.exe
     # http://stackoverflow.com/questions/4451213/ruby-1-9-2-how-to-install-rmagick-on-windows
-    gem "rmagick" 
+    #gem "rmagick" 
     gem "unicorn"
 end
