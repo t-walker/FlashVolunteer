@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   validates_length_of :description, :maximum => 2000, :message => 'The event description must be less than 2000 characters'
   validates_length_of :special_instructions, :maximum => 2000, :message => 'The event special instructions must be less than 2000 characters'
 
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :website, :hosted_by, :street, :latitude, :longitude, :moved_marker, :max_users, :special_instructions, :skill_id, :start, :end
   
   has_many :participations
   accepts_nested_attributes_for :participations
