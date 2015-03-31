@@ -10,6 +10,20 @@ class OrgsController < ApplicationController
     end
   end
 
+  def dashboard
+    authenticate_user!
+    if user_signed_in? and current_user.type == "Org"
+      @test = "hello"
+      @dashboard_view = params[:dashboard_view] ||= "overview"
+      respond_to do |format|
+        format.html
+        format.xml  { render :xml => @org }
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
   def set_page_title
     @title = ("#{@org.name} | Flash Volunteer") if (@org && @org.name)
   end

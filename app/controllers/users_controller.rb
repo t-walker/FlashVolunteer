@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if current_user == nil
       redirect_to featured_events_url(current_location_name)
     elsif current_user.type == 'Org'
-      redirect_to events_org_url(current_user)
+      redirect_to org_dashboard_url
     else
       redirect_to events_user_url(current_user)
     end
