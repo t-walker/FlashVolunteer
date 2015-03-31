@@ -41,7 +41,7 @@ gem 'yui-compressor'
 gem 'sass', '~> 3.2'
 gem 'sass-rails', '~> 3.2'
 gem 'compass', '~> 0.12'
-
+gem 'bootstrap-sass' 
 
 gem 'aws-sdk', '< 2.0'
 gem "paperclip", '~> 3.4'
