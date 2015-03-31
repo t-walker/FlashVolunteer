@@ -70,6 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    commonjs (0.2.7)
     compass (0.12.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -143,6 +144,12 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.6.0)
+      actionpack (>= 3.1)
+      less (~> 2.6.0)
+    libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -239,6 +246,7 @@ GEM
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.5)
     remotipart (1.2.1)
     rgeo (0.3.20)
     rgeo-activerecord (0.4.6)
@@ -266,6 +274,9 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       polyamorous (~> 1.1.0)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -273,6 +284,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.8)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
     tzinfo (0.3.41)
     uglifier (2.2.1)
       execjs (>= 0.3.0)
@@ -318,6 +334,7 @@ DEPENDENCIES
   jquery-rails (~> 2.2)
   jquery_datepicker
   json (~> 1.7.7)
+  less-rails
   mysql2 (= 0.3.11)
   newrelic_rpm
   nokogiri (= 1.5.9)
@@ -336,7 +353,9 @@ DEPENDENCIES
   sinatra (= 1.0)
   sqlite3
   squeel
+  therubyracer
   tlsmail
+  twitter-bootstrap-rails
   uglifier
   unicorn
   wicked
