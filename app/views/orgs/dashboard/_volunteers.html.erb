@@ -48,24 +48,25 @@
          <script type="text/javascript">
            google.setOnLoadCallback(drawChart);
 
-           function drawChart() {
-             var data = google.visualization.arrayToDataTable([
-               ['Year', 'V'],
-               ['2004',  1000],
-               ['2005',  1170],
-               ['2006',  660],
+             var total_v = google.visualization.arrayToDataTable([
+               ['Year', 'Volunteers'],
+               ['March',  1000],
+               ['April',  1170],
+               ['May',  660],
                ['2007',  1030]
              ]);
+
+           function drawChart() {
 
              var options = {
                title: 'Total Volunteers',
                curveType: 'none',
-               legend: { position: 'bottom' }
+               legend: 'none'
              };
 
              var chart = new google.visualization.LineChart(document.getElementById('total_vol'));
 
-             chart.draw(data, options);
+             chart.draw(total_v, options);
            }
          </script>
        </head>
@@ -88,8 +89,7 @@
       <script type="text/javascript">
         google.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable([
+          var new_v = google.visualization.arrayToDataTable([
             ['Year', 'Volunteers'],
             ['2004',  20],
             ['2005',  15],
@@ -97,16 +97,17 @@
             ['2007',  50],
             ['2008', 20]
           ]);
+        function drawChart() {
 
           var options = {
             title: 'New Volunteers',
             curveType: 'none',
-            legend: { position: 'bottom' }
+            legend: 'none'
           };
 
           var chart = new google.visualization.LineChart(document.getElementById('new_vol'));
 
-          chart.draw(data, options);
+          chart.draw(new_v, options);
         }
       </script>
     </head>
