@@ -1,1 +1,29 @@
-import!
+<nav class="navbar navbar-dash">
+    <div style="background-color:white;border:1px solid lightgrey;">
+        <div class="container">
+            <nav>
+                <ul class="nav">
+                  <li><%= link_to 'Volunteer Data'%></li>
+                  <li><%= link_to 'Event Data'%></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+<div class="row-fluid">
+  <div class="span12" style="background-color:white;border:1px solid lightgrey; padding:5px;">
+    <div class="span4" style="padding-top: 10px;">
+      <p class="pull-right">Please select a CSV file to upload:</p>
+    </div>
+    <div class="span4 pull-left" style="padding-top: 10px;">
+      <input type='text' class="full"/>
+    </div>
+    <div class="span2" style="padding-top: 10px;">
+      <button type="button" class="btn btn-default full">Browse</button>
+    </div>
+    <div class="span2" style="padding-top: 10px">
+      <button type="button" class="btn btn-default full">Import</button>
+    </div>
+  </div>
+</div>
