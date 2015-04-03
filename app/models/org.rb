@@ -15,4 +15,5 @@ class Org < User
   def self.xml(entity)
     entity.to_xml(:methods => [:categories, :avatar_url])
   end
+
 end
