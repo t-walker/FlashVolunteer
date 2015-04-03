@@ -3,15 +3,15 @@
         <div class="container">
             <nav>
                 <ul class="nav">
-                  <li><%= link_to 'Overview', org_dashboard_url(:dashboard_view => "overview") %></li>
-                  <li><%= link_to 'Volunteers', org_dashboard_url(:dashboard_view => "volunteers") %></li>
-                  <li><%= link_to 'Events', org_dashboard_url(:dashboard_view => "events") %></li>
+                  <li id="dashboard_overview"><%= link_to 'Overview', org_dashboard_url(:dashboard_view => "overview") %></li>
+                  <li id="dashboard_volunteers"><%= link_to 'Volunteers', org_dashboard_url(:dashboard_view => "volunteers") %></li>
+                  <li id="dashboard_events"><%= link_to 'Events', org_dashboard_url(:dashboard_view => "events") %></li>
                 </ul>
 
                 <ul class="nav pull-right">
-                  <li><%= link_to 'Import', org_dashboard_url(:dashboard_view => "import") %></li>
-                  <li><%= link_to 'Export', org_dashboard_url(:dashboard_view => "export") %></li>
-                  <li><%= link_to 'Help', org_dashboard_url(:dashboard_view => "help") %></li>
+                  <li id="dashboard_import"><%= link_to 'Import', org_dashboard_url(:dashboard_view => "import") %></li>
+                  <li id="dashboard_export"><%= link_to 'Export', org_dashboard_url(:dashboard_view => "export") %></li>
+                  <li id="dashboard_help"><%= link_to 'Help', org_dashboard_url(:dashboard_view => "help") %></li>
                 </ul>
             </nav>
         </div>
