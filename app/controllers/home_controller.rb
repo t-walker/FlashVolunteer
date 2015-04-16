@@ -44,4 +44,10 @@ class HomeController < ApplicationController
       format.html
     end
   end
+  def landing
+    @title = 'Flash Volunteer | Everyone engaged in volunteer service.'
+    respond_to do |format|
+      format.html
+    end
+  end
 end
