@@ -155,6 +155,6 @@ Flashvolunteer::Application.routes.draw do
   match 'leaderboard' => 'neighborhoods#leaderboard'
   match 'managers' => 'home#volunteer_managers'
   match 'faq_managers' => 'home#volunteer_managers_faq'
-
+  match 'landing_page' => 'home#landing'
   match '/:location' => 'events#featured', :as => 'hub'
 end
