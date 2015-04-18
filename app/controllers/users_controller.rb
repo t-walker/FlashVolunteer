@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   include ApplicationHelper
   load_and_authorize_resource
 
-  def index    
+  def index
     if current_user == nil
-      redirect_to featured_events_url(current_location_name)
+      redirect_to landing_page_url 
     elsif current_user.type == 'Org'
       redirect_to events_org_url(current_user)
     else
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     # @nFollowers = @user.followers.count
     @nHoursVolunteered = Participation.where('user_id = ?', @user.id).sum(:hours_volunteered)
 
-    @events = { 
+    @events = {
                 upcoming: { data: Event.upcoming.involving_user(@user).limit(limit), title: 'Upcoming' },
                 past: { data: Event.past.involving_user(@user).limit(limit), title: 'Past' }
               }
@@ -117,13 +117,13 @@ class UsersController < ApplicationController
 
     # begin with an an association that's always true
     @users = User.where('1=1')
-    
+
     @users = id_array.length > 0 ? @users.where{id.eq_any id_array} : @users
     @users = email_array.length > 0 ? @users.where{email.eq_any email_array} : @users
     @users = categories_array.length > 0 ? @users.joins(:skills).where{skills.id.eq_any categories_array} : @users
     @users = team_array.length > 0 ? @users.joins(:followers).where{users_followers.follower_id.eq_any team_array} : @users
     @users = @users.paginate(:page=>params[:page], :per_page => per_page)
-    
+
     respond_to do |format|
       format.html
       format.xml  { render :xml => User.xml(@users)}
