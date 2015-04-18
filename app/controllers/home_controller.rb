@@ -47,7 +47,7 @@ class HomeController < ApplicationController
   def landing
     @title = 'Flash Volunteer | Everyone engaged in volunteer service.'
     respond_to do |format|
-      format.html
+      format.html { render :layout => 'application' }
     end
   end
 end
