@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   include ApplicationHelper
   skip_authorization_check
+  before_action :configure_permitted_parameters, only: [:create]
 
   def quick
   end
@@ -32,4 +33,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def should_remove_returns_to?
     false
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:name, :email, :password, :password_confirmation)
+    end
+  end
+
 end
