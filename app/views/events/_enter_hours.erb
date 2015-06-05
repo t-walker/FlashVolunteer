@@ -44,7 +44,14 @@
 
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <%= f.submit('Save', :class=>'btn btn-primary') %>
+          <% if (@event.participations.empty?)%>
+            <button class="btn" data-dismiss="modal" disabled="true" aria-hidden="true">Save</button>
+            <!--<%= f.submit('Save', :class=>'btn btn-primary', data: {disable_with: "Submit"}) %>-->
+          <% else %>
+            <%= f.submit('Save', :class=>'btn btn-primary') %>
+          <% end %>
+
+
         </div>
     <% end %>
 <% end %>
