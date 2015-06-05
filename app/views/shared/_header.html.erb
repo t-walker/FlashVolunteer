@@ -42,7 +42,14 @@
         </li>
       <% end %>
 
-      <input type="text" name="search" class="search-query" placeholder="Search">
+      <div class="col-sm-5 col-md-5">
+        <form class="navbar-form" role="search">
+          <div class="input-group">
+            <input type="text" class="form-control" style="border-radius: 15px;" placeholder="Search" name="srch-term" id="srch-term">
+            <input name="commit" style="display:none" type="submit" value="">
+          </div>
+        </form>
+      </div>
 
       <ul class="nav navbar-nav navbar-right">
             <% if !user_signed_in? %>
