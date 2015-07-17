@@ -13,6 +13,7 @@
           Hash["name" => "brian nash", "subtext" => "secretary", "image" => "board/brian.png", "myurl" => "http://www.flashvolunteer.org/users/41"],
           Hash["name" => "logan buesching", "subtext" => "director", "image" => "board/logan.jpg", "myurl" => "http://www.flashvolunteer.org/users/1"],
           Hash["name" => "tyler walker", "subtext" => "director", "image" => "board/tyler.jpg", "myurl" => "http://www.flashvolunteer.org/users/38231"],
+          Hash["name" => "mark aldham", "subtext" => "board member", "image" => "board/mark.jpg","myurl" => "#"],
        ].each_with_index do |person, i| %>
         <div class="span4 clearfix">
             <%= link_to render(:partial => "users/shared/user_span", :locals => { :name => person["name"], :subtext => person["subtext"], :image => person["image"],
