@@ -29,6 +29,8 @@ gem "squeel"
 gem 'rails_admin', '~> 0.6'
 # API
 gem 'grape'
+# WEBrick is no longer used; thin now.
+gem 'thin'
 
 # Delayed Jobs
 gem 'delayed_job_active_record', '~> 4.0'
