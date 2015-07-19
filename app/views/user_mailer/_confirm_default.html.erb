@@ -21,8 +21,8 @@
 </p>
 
 <% if !@resource.confirmed? || @resource.unconfirmed_email != nil %>
-    <p><%= link_to 'Yep, you got me', confirmation_url(@resource, :confirmation_token => @token) %>! </p>
-    <p> Once you've <%= link_to 'confirmed with us', confirmation_url(@resource, :confirmation_token => @token) %>,
+    <p><%= link_to 'Yep, you got me', confirmation_url(@resource, :user_id => @resource.id) %>! </p>
+    <p> Once you've <%= link_to 'confirmed with us', confirmation_url(@resource, :user_id => @resource.id) %>,
 <% else %>
 <p> Now
 <% end %>
