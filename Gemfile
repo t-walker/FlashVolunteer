@@ -7,7 +7,7 @@ gem 'json', '~> 1.7.7'
 # Pagination
 gem 'will_paginate', '~> 3.0'
 # Authentication
-gem 'devise', '~> 3.4'
+gem 'devise', '~> 3.1.1'
 # Authorization
 gem 'cancan', '= 1.6.9'
 # Geocoding
@@ -65,7 +65,7 @@ gem 'classy_enum', '~> 2.0.3'
 
 gem 'sinatra', '1.0'
 gem 'date_validator', '0.7.1'
-gem 'mysql2', '=0.3.11'
+gem 'mysql2', '=0.3.18'
 
 gem 'rgeo'
 gem 'rgeo-geojson'
