@@ -16,13 +16,13 @@
     Before you can sign in with this new e-mail address, we just need to make sure we got your information down right (our handwriting is kind of messy).
 <% end %>
 <% if !@resource.confirmed? %>
-    Before you can create an event or sign up for one, we just need to make sure we got your information down right (our handwriting is kind of messy). 
+    Before you can create an event or sign up for one, we just need to make sure we got your information down right (our handwriting is kind of messy).
 <% end %>
 </p>
 
 <% if !@resource.confirmed? || @resource.unconfirmed_email != nil %>
-    <p><%= link_to 'Yep, you got me', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>! </p>
-    <p> Once you've <%= link_to 'confirmed with us', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>, 
+    <p><%= link_to 'Yep, you got me', confirmation_url(@resource, :confirmation_token => @token) %>! </p>
+    <p> Once you've <%= link_to 'confirmed with us', confirmation_url(@resource, :confirmation_token => @token) %>,
 <% else %>
 <p> Now
 <% end %>
