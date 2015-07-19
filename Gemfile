@@ -1,4 +1,4 @@
-ruby '1.9.3'
+ruby '2.2.2'
 source 'http://rubygems.org'
 
 gem 'rails', '4.2.1'
