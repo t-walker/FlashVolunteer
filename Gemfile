@@ -2,12 +2,12 @@ ruby '2.2.2'
 source 'http://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'json', '~> 1.7.7'
+gem 'json', '~> 1.8.3'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'
 # Authentication
-gem 'devise', '~> 3.1.1'
+gem 'devise', '~> 3.4'
 # Authorization
 gem 'cancan', '= 1.6.9'
 # Geocoding
