@@ -7,10 +7,12 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def show
-    @user = User.find_by_confirmation_token(params[:confirmation_token]) || nil
+    original_token = params[:confirmation_token]
+    confirmation_token = Devise.token_generator.digest(User, :confirmation_token, original_token)
+    @user = User.find_by_confirmation_token(confirmation_token) || nil
     # If the user entered a password through the 'create an account', then the encrypted password is set, and their e-mail is confirmed
     if @user != nil
-      @user = User.confirm_by_token(@user.confirmation_token)
+      @user.confirm!
       @user.roles << Role.find_by_name('Volunteer')
       set_flash_message :notice, :confirmed
       sign_in_and_redirect(@user)
@@ -21,11 +23,13 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def confirm_account
-    @user = User.find_by_confirmation_token(params[:user][:confirmation_token])
+    original_token = params[:confirmation_token]
+    confirmation_token = Devise.token_generator.digest(User, :confirmation_token, original_token)
+    @user = User.find_by_confirmation_token(confirmation_token) || nil
     if @user.update_attributes(params[:user]) and @user.password_match?
-      @user = User.confirm_by_token(@user.confirmation_token)
+      @user.confirm!
       @user.roles << Role.find_by_name('Volunteer')
-      set_flash_message :notice, :confirmed      
+      set_flash_message :notice, :confirmed
       sign_in_and_redirect(@user)
     else
       render :action => 'show'
