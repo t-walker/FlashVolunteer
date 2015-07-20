@@ -1,8 +1,8 @@
-ruby '1.9.3'
+ruby '2.2.2'
 source 'http://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'json', '~> 1.7.7'
+gem 'json', '~> 1.8.3'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'
@@ -29,6 +29,8 @@ gem "squeel"
 gem 'rails_admin', '~> 0.6'
 # API
 gem 'grape'
+# WEBrick is no longer used; thin now.
+gem 'thin'
 
 # Delayed Jobs
 gem 'delayed_job_active_record', '~> 4.0'
@@ -63,7 +65,7 @@ gem 'classy_enum', '~> 2.0.3'
 
 gem 'sinatra', '1.0'
 gem 'date_validator', '0.7.1'
-gem 'mysql2', '=0.3.11'
+gem 'mysql2', '=0.3.18'
 
 gem 'rgeo'
 gem 'rgeo-geojson'
