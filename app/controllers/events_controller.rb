@@ -60,7 +60,7 @@ class EventsController < ApplicationController
     @events = Event.includes(:neighborhood).near_user(current_location).featured.upcoming
     @current_sponsor = current_sponsor
 
-    if @events.featured.count(:all) == 0
+    if @events.featured.empty?
       @events = Event.near_user(current_location).upcoming.paginate(:page => params[:page], :per_page=> 6)
     end
 
@@ -233,7 +233,7 @@ class EventsController < ApplicationController
     message = params[:message]
 
     @event.participants.each do |p|
-      if p.notification_preferences.count(:name => 'organizer_broadcast') > 0
+      if !p.notification_preferences.empty(:name=>'oranizer_broadcast')
         if Rails.env.production?
           # send the e-mail
           UserMailer.delay.organizer_broadcast(@event, p, message)
